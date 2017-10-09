@@ -11,7 +11,6 @@ public class MainMenuForDocuments {
         for (int i = 0; i < folder.length; i++) {
             folder[i] =  new Document();
         }
-        //Document document[] = new Document[3];
         Scanner scanner = new Scanner(System.in);
         while (true) {
             Menu.showMainMenu();

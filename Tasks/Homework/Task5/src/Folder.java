@@ -4,9 +4,6 @@
 // Класс документ - отдельный файл
 // от класса можно создавать ОБЪЕКТЫ
 public class Folder {
-    // каждый объект класса будет иметь свои копии
-    // count и lines
-   // int count = 0;
 
     static void showFolder(Document folder[]) {
         for (int i = 0; i < folder.length; i++) {

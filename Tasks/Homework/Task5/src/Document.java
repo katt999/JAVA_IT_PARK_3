@@ -11,7 +11,6 @@ public class Document {
 
     void showDocument() {
         for (int i = 0; i < lines.length; i++) {
-            // тернарный условный оператор e ? a : b
             String lineToOut = lines[i] == null ? "_______" : lines[i];
             System.out.println(i + ": " + lineToOut);
         }
