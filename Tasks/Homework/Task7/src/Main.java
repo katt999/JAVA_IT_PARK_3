@@ -13,7 +13,6 @@ public class Main {
                 System.out.println(geometricFigures[i] + ":");
                 System.out.println("Площадь " + square.getArea());
                 System.out.println("Периметр " + square.getPerimeter());
-                System.out.println();
             }
             else if (geometricFigures[i].equals("Rectangle")) {
                 Rectangle rectangle = new Rectangle("Rectangle",5,2);
