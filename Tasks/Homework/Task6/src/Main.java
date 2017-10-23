@@ -7,6 +7,10 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Program programs_ort[] ;
+        public Program programs_tnt[];
+        public Program programs_pyatnica[];
+
        Channel.programs_ort[0]
 
         Program listProgram1 = new Program("Новости", LocalTime.of(8, 00, 00), LocalTime.of(8, 30, 00));
