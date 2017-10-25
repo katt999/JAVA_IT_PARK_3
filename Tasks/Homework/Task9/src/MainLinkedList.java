@@ -25,6 +25,8 @@ public class MainLinkedList {
             System.out.println(iteratorAddEnd.next());
         }
 
+        System.out.println("Количество элементов: " + list.countElements());
+
         list.addInIndex(1, 90);
         Iterator iteratorAddInIndex = list.iterator();
         System.out.println("Вставка по индексу: ");
@@ -32,6 +34,25 @@ public class MainLinkedList {
             System.out.println(iteratorAddInIndex.next());
         }
 
-        System.out.println("Количество элементов: " + list.countElements());
+        list.delIndex(2);
+        Iterator iteratorDelIndex = list.iterator();
+        System.out.println("Удаление по индексу: ");
+        while (iteratorDelIndex.hasNext()) {
+            System.out.println(iteratorDelIndex.next());
+        }
+
+        list.delElement(90);
+        Iterator iteratorDelElement = list.iterator();
+        System.out.println("Удаление по элементу: ");
+        while (iteratorDelElement.hasNext()) {
+            System.out.println(iteratorDelElement.next());
+        }
+
+        list.expand();
+        Iterator iteratorExpand = list.iterator();
+        System.out.println("Развернутый список: ");
+        while (iteratorExpand.hasNext()) {
+            System.out.println(iteratorExpand.next());
+        }
     }
 }

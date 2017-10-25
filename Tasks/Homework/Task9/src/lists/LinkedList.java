@@ -30,11 +30,9 @@ public class LinkedList implements List {
     public void addToBegin(int element) {
         // создали узел для элемента
         Node newNode = new Node(element);
-
         if (head != null) {
             newNode.next = head;
         }
-
         head = newNode;
         count++;
     }
@@ -56,35 +54,57 @@ public class LinkedList implements List {
     }
 
     @Override
-    public void expand() {
 
+    public void expand() {
+        Node previousNode = null;
+        Node currentNode = head;
+        while (currentNode != null)
+        {
+            Node nextNode = currentNode.next;
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+            currentNode = nextNode;
+        }
+        head = previousNode;
     }
 
     @Override
     public void addInIndex(int index, int element) {
-        Node newNode = new Node(element);
-        Node addNode = null;
         int i=0;
         LinkedListIterator iterator = new LinkedListIterator();
         while (iterator.hasNext()) {
             if (i != index) {
-                addNode = iterator.currentNode;
                 iterator.next();
                 i++;
             }
             else break;
         }
-        addNode.next = newNode;
-        count++;
+        iterator.currentNode.value = element;
     }
 
     @Override
     public void delIndex(int index) {
-
+        int i=0;
+        LinkedListIterator iterator = new LinkedListIterator();
+        while (iterator.hasNext()) {
+            if (i != index) {
+                iterator.next();
+                i++;
+            }
+            else break;
+        }
+        iterator.currentNode.value = 0;
     }
 
     @Override
     public void delElement(int element) {
+        Node newNode = head;
+        while (newNode.next != null) {
+            if (newNode.next.value == element)
+                newNode.next = newNode.next.next;
+            else newNode = newNode.next;
+        }
+        count--;
     }
 
 
