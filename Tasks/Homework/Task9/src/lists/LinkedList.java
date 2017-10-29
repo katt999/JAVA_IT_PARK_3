@@ -16,13 +16,18 @@ public class LinkedList implements List {
     @Override
     public void add(int element) {
         Node newNode = new Node(element);
-        Node endNode = null;
-        LinkedListIterator iterator = new LinkedListIterator();
-        while (iterator.hasNext()) {
-            endNode = iterator.currentNode;
-            iterator.next();
+        Node current = null;
+        if (head == null) {
+            head = newNode;
         }
-        endNode.next = newNode;
+        else {
+            LinkedListIterator iterator = new LinkedListIterator();
+            while (iterator.hasNext()) {
+                current = iterator.currentNode;
+                iterator.next();
+            }
+            current.next = newNode;
+        }
         count++;
     }
 
