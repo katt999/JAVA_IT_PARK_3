@@ -9,7 +9,7 @@ public class Main {
         String name = "postgres";
         String password = "Zaq12wsx";
         String url = "jdbc:postgresql://localhost:5432/Zabinskaya_db";
-        Connection connection = DriverManager.getConnection(url, name, password);
+        Connection connection = DriverManager.getConnection(driver,url, name, password);
 
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM owner");
@@ -23,9 +23,13 @@ public class Main {
         String ownerName = scanner.next();
         int age  = scanner.nextInt();
 
-       // statement.executeUpdate("INSERT INTO owner (name,age) VALUES ('"+ ownerName +"',"+ age +")");
+       //statement.executeUpdate("INSERT INTO owner (name,age) VALUES ('"+ ownerName +"',"+ age +")");
 
-        PreparedStatement preparedStatement = connection;
+        PreparedStatement preparedStatement = connection
+                .prepareStatement("INSERT INTO owner(name, age) VALUES (?, ?)");
+        preparedStatement.setString(1, name);
+        preparedStatement.setInt(2, age);
+        preparedStatement.execute();
 
     }
 }

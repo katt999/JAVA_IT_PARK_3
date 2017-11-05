@@ -14,5 +14,16 @@ public class Program {
         this.endTime = endTime;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public LocalTime getBeginTime() {
+        return beginTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
 
 }
