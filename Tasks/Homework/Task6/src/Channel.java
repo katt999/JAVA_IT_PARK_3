@@ -11,5 +11,16 @@ public class Channel {
         this.programs = programs;
     }
 
+    public Program[] getPrograms() {
+        return programs;
+    }
+
+    public static void showChannel(Channel channel){
+        for (int i=0;i < channel.;)
+        Program.showProgram(channel[i]);
+    }
+
+
+
 
 }

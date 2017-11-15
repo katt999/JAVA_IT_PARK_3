@@ -40,7 +40,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите номер канала: ");
         int numChannel = scanner.nextInt();
-        Tv.showProgram(tv,numChannel);
+        if (channels[numChannel] != null)
+            channels[numChannel].showChannel(channels[numChannel]);
+        else
+           System.out.println("Такого канала нет на телевизоре");
 
     }
 }
