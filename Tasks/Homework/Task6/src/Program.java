@@ -22,11 +22,6 @@ public class Program {
         return beginTime;
     }
 
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public static void showProgram(Program[] programs){
-    }
+    public LocalTime getEndTime() {return endTime; }
 
 }

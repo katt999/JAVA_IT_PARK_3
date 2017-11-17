@@ -8,9 +8,4 @@ public class Tv {
         this.channels = channels;
     }
 
-    public static void showChannel(Channel channel){
-         Channel.showProgram(channel[0]);
-    }
-
-
 }

@@ -37,13 +37,14 @@ public class Main {
 
         Tv tv = new Tv(channels);
 
+        RemoteControl remote = new RemoteControl(tv);
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите номер канала: ");
         int numChannel = scanner.nextInt();
         if (channels[numChannel] != null)
-            channels[numChannel].showChannel(channels[numChannel]);
+           remote.swichChannel(channels[numChannel]);
         else
            System.out.println("Такого канала нет на телевизоре");
-
     }
 }

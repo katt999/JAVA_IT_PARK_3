@@ -15,12 +15,4 @@ public class Channel {
         return programs;
     }
 
-    public static void showChannel(Channel channel){
-        for (int i=0;i < channel.;)
-        Program.showProgram(channel[i]);
-    }
-
-
-
-
 }
