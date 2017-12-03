@@ -9,7 +9,8 @@ import java.util.concurrent.Executors;
 public class Main {
     public static boolean numberFound = false;
     public static void main(String[] args) {
-        ExecutorService service = Executors.newFixedThreadPool(3);
+        //ExecutorService service = Executors.newFixedThreadPool(3);
+        ThreadPool threadPool = new ThreadPool(3);
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите количество строк");
         int row = scanner.nextInt();
@@ -22,7 +23,7 @@ public class Main {
         Random random = new Random();
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
-                matrix[i][j] = random.nextInt(1000);
+                matrix[i][j] = random.nextInt(10);
             }
         }
 
@@ -38,16 +39,16 @@ public class Main {
                 int element = matrix[i][j];
                 int rowPosition = i;
                 int columnPosition = j;
-                service.submit(() -> {
+                threadPool.submitTask(() -> {
                             if (element == number && !numberFound) {
                                 System.out.println("Искомое число найдено на позиции: [" + rowPosition + "][" + columnPosition + "]");
                                 numberFound = true;
-                                service.shutdown();
+                                //service.shutdown();
                             }
                         }
                 );
-          }
-
+                if (numberFound) break;
+            } if (numberFound) break;
         }
        if (!numberFound)  System.out.println("Искомое число не найдено");
     }
