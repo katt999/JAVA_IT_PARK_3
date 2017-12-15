@@ -7,19 +7,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-public class CarJdbcTemplateDaoImplTest {
+public class CarsDaoJdbcImplTest {
 
-    // объектная переменная, которая хранит объект тестирования
-    private CarJdbcTemplateDaoImpl testedCarsDao;
+    private CarsDaoJdbcImpl testedCarsDao;
 
-    // метод, который вызывается перед каждым тест-методом
     @Before
     public void setUp() throws Exception {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUsername("postgres");
         dataSource.setPassword("280710");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/Zabinskaya_db");
-        testedCarsDao = new CarJdbcTemplateDaoImpl(dataSource);
+        testedCarsDao = new CarsDaoJdbcImpl(dataSource);
     }
 
     @Test
@@ -50,5 +48,4 @@ public class CarJdbcTemplateDaoImplTest {
     public void findTestOnBadUserId() {
         testedCarsDao.find(44);
     }
-
 }

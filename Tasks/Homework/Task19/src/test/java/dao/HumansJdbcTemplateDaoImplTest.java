@@ -29,9 +29,9 @@ public class HumansJdbcTemplateDaoImplTest {
     public void findTest() throws Exception {
         Human expected = Human.builder()
                 .id(2)
-                .age(19)
-                .name("Андрей")
-                .height("168")
+                .age(29)
+                .name("Дмитрий")
+                .height("180")
                 .build();
 
         Human actual = testedHumansDao.find(2);

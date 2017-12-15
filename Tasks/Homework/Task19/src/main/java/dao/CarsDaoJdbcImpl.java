@@ -1,6 +1,7 @@
 package dao;
 
 import models.Car;
+import models.Human;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -40,7 +41,8 @@ public class CarsDaoJdbcImpl  implements CarsDao {
     public Car find(int id) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("SELECT * FROM car WHERE id = ?");
+                    .prepareStatement("SELECT car.*,owner.id as owner_id, owner.* FROM car JOIN " +
+                            "owner ON car.owner_id=owner.id WHERE car.id = ?");
             preparedStatement.setInt(1,id);
             ResultSet resultSet = preparedStatement.executeQuery();
             Car car = null;
@@ -51,6 +53,14 @@ public class CarsDaoJdbcImpl  implements CarsDao {
                         .number(resultSet.getString("number"))
                         .color(resultSet.getString("color"))
                         .build();
+
+                Human owner = Human.builder()
+                        .id(resultSet.getInt("owner_id"))
+                        .name(resultSet.getString("name"))
+                        .age(resultSet.getInt("age"))
+                        .height(resultSet.getString("height"))
+                        .build();
+                car.setOwner(owner);
             }
             if (car == null) {
                 throw new IllegalArgumentException("Car with id <\" + id + \"> not found");
