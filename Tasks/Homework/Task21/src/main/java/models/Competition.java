@@ -14,14 +14,14 @@ import lombok.*;
 @Builder
 public class Competition {
     private int id;
-    private int formativeOrgUnitId;
-    private int competitionTypeId;
-    private int programFormId;
-    private int programSubjectId;
-    private int levelTypeId;
+    private FormativeOrgUnit formativeOrgUnitId;
+    private CompetitionType competitionTypeId;
+    private ProgramForm programFormId;
+    private ProgramSubject programSubjectId;
+    private LevelType levelTypeId;
+    private CompensationType compensationTypeId;
     private int programSetOuMinisterialPlan;
     private int programSetOuTargetAdmPlan;
     private int programSetOuExclusivePlan;
     private int programSetOuContractPlan;
-    private int compensationTypeId;
 }

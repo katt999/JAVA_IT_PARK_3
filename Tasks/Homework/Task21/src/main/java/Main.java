@@ -15,6 +15,6 @@ public class Main {
         System.out.println("Context loaded");
 
         CompetitionDao competitionDao = (CompetitionDao) context.getBean("competitionDao");
-        competitionDao.find(6);
+        System.out.println(competitionDao.find(6));
     }
 }
