@@ -9,12 +9,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // подключили конфигурационный файл
         Configuration configuration = new Configuration()
                 .configure("hibernate.cfg.xml");
-        // получили фабрику сессий
         SessionFactory sessionFactory = configuration.buildSessionFactory();
-        // открыли сессию
         Session session = sessionFactory.openSession();
         Query<User> userQuery = session.createQuery("from User user where user.id = 2");
 
@@ -28,10 +25,9 @@ public class Main {
         session.close();
 
         session = sessionFactory.openSession();
-        // начинаем транзакцию
         session.beginTransaction();
         User newUser = User.builder()
-                .name("ДжойКазино")
+                .name("Дмитрий")
                 .height(170)
                 .age(76)
                 .build();
@@ -43,9 +39,7 @@ public class Main {
         session = sessionFactory.openSession();
 
         session.beginTransaction();
-        newUser.setName("Рояль");
-        // newUser.setId(777L);
-        // session.persist(newUser);
+        newUser.setName("Алексей");
         session.merge(newUser);
         session.persist(newUser);
         session.getTransaction().commit();
