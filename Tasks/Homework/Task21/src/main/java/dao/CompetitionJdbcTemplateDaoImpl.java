@@ -3,19 +3,12 @@ package dao;
 import models.*;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
-import sun.rmi.transport.Connection;
 
 import javax.sql.DataSource;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -40,7 +33,7 @@ public class CompetitionJdbcTemplateDaoImpl implements CompetitionDao {
             "WHERE competition.id = ?";
 
     //language=SQL
-    private static final String SQL_INSERT_COMPETITION_BY_ID = "INSERT INTO competition () VALUES (?,?,?,?,?,?,?,?,?)";
+    private static final String SQL_INSERT_COMPETITION_BY_ID = "INSERT INTO competition () VALUES (?,?,?,?,?,?,?,?,?,?)";
 
     private JdbcTemplate template;
 
@@ -106,7 +99,8 @@ public class CompetitionJdbcTemplateDaoImpl implements CompetitionDao {
 
 
     @Override
-    public void save(Competition model) {
+    public void insert(Competition model) {
+
     }
 
     @Override
