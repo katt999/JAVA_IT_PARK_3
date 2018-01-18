@@ -25,8 +25,13 @@
     </servlet>
 
     <servlet>
-        <servlet-name>programSubjectJspServlet</servlet-name>
-        <servlet-class>servlets.ProgramSubjectJspServlet</servlet-class>
+       <servlet-name>programSubjectJspServlet</servlet-name>
+       <servlet-class>servlets.ProgramSubjectJspServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>competitionTypeJspServlet</servlet-name>
+        <servlet-class>servlets.CompetitionTypeJspServlet</servlet-class>
     </servlet>
 
 
@@ -59,6 +64,11 @@
     <servlet-mapping>
         <servlet-name>programSubjectJspServlet</servlet-name>
         <url-pattern>/program_subject_as_jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>competitionTypeJspServlet</servlet-name>
+        <url-pattern>/competition_type_as_jsp</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

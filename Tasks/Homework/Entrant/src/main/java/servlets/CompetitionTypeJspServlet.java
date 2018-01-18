@@ -1,7 +1,7 @@
 package servlets;
 
-import models.ProgramSubject;
-import repository.ProgramSubjectRepository;
+import models.CompetitionType;
+import repository.CompetitionTypeRepository;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -13,35 +13,33 @@ import java.io.IOException;
 /**
  * Created by EVZabinskaya on 07.01.2018.
  */
-public class ProgramSubjectJspServlet extends HttpServlet {
+public class CompetitionTypeJspServlet extends HttpServlet {
 
-    private ProgramSubjectRepository programSubjectRepository;
+    private CompetitionTypeRepository competitionTypeRepository;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        this.programSubjectRepository = (ProgramSubjectRepository)config.getServletContext().getAttribute("programSubjectRepository");
+        this.competitionTypeRepository = (CompetitionTypeRepository)config.getServletContext().getAttribute("competitionTypeRepository");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        req.setAttribute("programSubjects", programSubjectRepository.findAll());
-        req.getRequestDispatcher("/jsp/program_subject_with_tags.jsp").forward(req, resp);
+        req.setAttribute("competitionTypes", competitionTypeRepository.findAll());
+        req.getRequestDispatcher("/jsp/competition_type_with_tags.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        String code = req.getParameter("code");
         String title = req.getParameter("title");
 
-        ProgramSubject programSubject = ProgramSubject.builder()
-                .code(code)
+        CompetitionType competitionType = CompetitionType.builder()
                 .title(title)
 
                 .build();
 
-        programSubjectRepository.save(programSubject);
-        resp.sendRedirect("/program_subject_as_jsp");
+        competitionTypeRepository.save(competitionType);
+        resp.sendRedirect("/competition_type_as_jsp");
     }
+
 }

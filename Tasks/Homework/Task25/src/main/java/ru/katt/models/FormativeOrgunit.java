@@ -1,14 +1,13 @@
-package models;
+package ru.katt.models;
 
 /**
  * Created by EVZabinskaya on 28.12.2017.
  */
 import lombok.*;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "owner")
+@Table(name = "formative_orgunit", schema = "public")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,12 +15,16 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode
 @Builder
-public class User {
+
+public class FormativeOrgunit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private int age;
-   // private int height;
+
+    @Column (name = "short_title")
+    private String shortTitle;
+
+    @Column (name = "full_title")
+    private String fullTitle;
 }

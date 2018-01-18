@@ -62,7 +62,7 @@
   <div class="container-wrapper">
     <div class="page-title-wrapper">
       <div class="center">
-        <h1>Справочник формирующих подразделений</h1>
+        <h1>Справочник типов конкурса</h1>
       </div>
     </div>
     <div class="clear"></div>
@@ -70,25 +70,22 @@
       <!-- start container -->
 
       <div class="page-wrapper">
-        <table style="width: 50%; font-family: 'Open Sans', sans-serif;">
-          <tr>
-            <th>Id</th>
-            <th>Краткое наименование</th>
-            <th>Полное наименование</th>
-          </tr>
-          <c:forEach items="${formativeOrgunits}" var="formativeOrgunit">
-            <tr>
-              <td>${formativeOrgunit.id}</td>
-              <td>${formativeOrgunit.shortTitle}</td>
-              <td>${formativeOrgunit.fullTitle}</td>
-            </tr>
-          </c:forEach>
-        </table>
-        <form action="/formative_orgunit_as_jsp" method="post" class="wpcf7">
-          <input type="text" style="width:250px;" name="shortTitle" placeholder="Краткое наименование" class="wpcf7-form-control">
-          <input type="text" style="width:250px;" name="fullTitle" placeholder="Полное наименование" class="wpcf7-form-control">
-          <input type="submit" style="width:250px;" class="wpcf7-form-control wpcf7-submit" value="ДОБАВИТЬ">
-        </form>
+<table style="width: 50%; font-family: 'Open Sans', sans-serif;">
+  <tr>
+    <th>Id</th>
+    <th>Наименование</th>
+  </tr>
+  <c:forEach items="${competitionTypes}" var="competitionType">
+    <tr>
+      <td>${competitionType.id}</td>
+      <td>${competitionType.title}</td>
+    </tr>
+  </c:forEach>
+</table>
+<form action="/competition_type_as_jsp" method="post" class="wpcf7">
+  <input type="text" style="width:250px;" name="title" placeholder="Наименование" class="wpcf7-form-control">
+  <input type="submit" style="width:250px;" class="wpcf7-form-control wpcf7-submit" value="ДОБАВИТЬ">
+</form>
       </div>
     </div>
     <!-- end container -->

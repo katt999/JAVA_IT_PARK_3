@@ -6,6 +6,8 @@ package models;
 import lombok.*;
 import javax.persistence.*;
 
+@Entity
+@Table(name = "competition_type", schema = "public")
 @Getter
 @Setter
 @AllArgsConstructor

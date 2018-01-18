@@ -70,7 +70,7 @@
       <!-- start container -->
 
       <div class="page-wrapper">
-<table style="width: 50%; font-family: 'Open Sans', sans-serif;paddi">
+<table style="width: 50%; font-family: 'Open Sans', sans-serif;">
   <tr>
     <th>Id</th>
     <th>Наименование</th>
