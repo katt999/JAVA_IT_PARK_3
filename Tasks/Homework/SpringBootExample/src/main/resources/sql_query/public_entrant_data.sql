@@ -1,0 +1,1 @@
+INSERT INTO public.entrant_data (id, first_name, last_name, middle_name, birth_date, citizenship, edu_document_number, edu_document_average_mark, edu_document_kind_id) VALUES (10, 'Екатерина', 'Забинская', 'Вячеславовна', '2018-01-01', 'Россия', 23, 5, 1);

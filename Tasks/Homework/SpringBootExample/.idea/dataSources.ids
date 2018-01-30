@@ -1554,11 +1554,7 @@
       <column name="compensation_type_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="competition_pkey" columns="id"/>
       <foreign-key name="competition_compensation_type_id_fkey" columns="compensation_type_id" ref-table="compensation_type" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="competition_competition_type_id_fkey" columns="competition_type_id" ref-table="competition_type" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="competition_formative_orgunit_id_fkey" columns="formative_orgunit_id" ref-table="formative_orgunit" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="competition_level_type_id_fkey" columns="level_type_id" ref-table="level_type" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="competition_program_form_id_fkey" columns="program_form_id" ref-table="program_form" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="competition_program_subject_id_fkey" columns="program_subject_id" ref-table="program_subject" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="entrant_competition_competition_id_fkey" table="entrant_competition" schema="public" catalog="Entrant_db" columns="competition_id"/>
     </table>
     <table name="competition_id_seq" schema="public" catalog="Entrant_db" type="SEQUENCE"/>
@@ -1566,7 +1562,6 @@
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY29tcGV0aXRpb25fdHlwZV9pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
       <column name="title" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="competition_type_pkey" columns="id"/>
-      <exported-key name="competition_competition_type_id_fkey" table="competition" schema="public" catalog="Entrant_db" columns="competition_type_id"/>
     </table>
     <table name="competition_type_id_seq" schema="public" catalog="Entrant_db" type="SEQUENCE"/>
     <table name="discipline" schema="public" catalog="Entrant_db" type="TABLE">
@@ -1620,7 +1615,6 @@
       <column name="full_title" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="short_title" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="formative_orgunit_pkey" columns="id"/>
-      <exported-key name="competition_formative_orgunit_id_fkey" table="competition" schema="public" catalog="Entrant_db" columns="formative_orgunit_id"/>
     </table>
     <table name="formative_orgunit_id_seq" schema="public" catalog="Entrant_db" type="SEQUENCE"/>
     <table name="level_type" schema="public" catalog="Entrant_db" type="TABLE">
@@ -1630,21 +1624,11 @@
       <exported-key name="competition_level_type_id_fkey" table="competition" schema="public" catalog="Entrant_db" columns="level_type_id"/>
     </table>
     <table name="level_type_id_seq" schema="public" catalog="Entrant_db" type="SEQUENCE"/>
-    <table name="news_user" schema="public" catalog="Entrant_db" type="TABLE">
-      <column name="id" sqlType="bigserial" precision="19" scale="0" nullable="false" jdbcType="-5" def="bmV4dHZhbCgnbmV3c191c2VyX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="email" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="hash_password" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="registration_time" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="surname" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="news_user_pkey" columns="id"/>
-    </table>
     <table name="news_user_id_seq" schema="public" catalog="Entrant_db" type="SEQUENCE"/>
     <table name="program_form" schema="public" catalog="Entrant_db" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncHJvZ3JhbV9mb3JtX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
       <column name="title" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="program_form_pkey" columns="id"/>
-      <exported-key name="competition_program_form_id_fkey" table="competition" schema="public" catalog="Entrant_db" columns="program_form_id"/>
     </table>
     <table name="program_form_id_seq" schema="public" catalog="Entrant_db" type="SEQUENCE"/>
     <table name="program_subject" schema="public" catalog="Entrant_db" type="TABLE">
@@ -1652,14 +1636,19 @@
       <column name="code" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12"/>
       <column name="title" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="program_subject_pkey" columns="id"/>
-      <exported-key name="competition_program_subject_id_fkey" table="competition" schema="public" catalog="Entrant_db" columns="program_subject_id"/>
     </table>
     <table name="program_subject_id_seq" schema="public" catalog="Entrant_db" type="SEQUENCE"/>
     <table name="users" schema="public" catalog="Entrant_db" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndXNlcnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="name" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
-      <column name="password" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="users_pkey" columns="id"/>
+      <column name="id" sqlType="bigserial" precision="19" scale="0" nullable="false" jdbcType="-5" def="bmV4dHZhbCgnbmV3c191c2VyX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
+      <column name="confirm_code" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="expired_date" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <column name="hash_password" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="registration_time" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <column name="state" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="surname" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="news_user_pkey" columns="id"/>
     </table>
     <table name="users_id_seq" schema="public" catalog="Entrant_db" type="SEQUENCE"/>
     <procedure name="RI_FKey_cascade_del" schema="pg_catalog" catalog="Entrant_db" type="2" remarks="cmVmZXJlbnRpYWwgaW50ZWdyaXR5IE9OIERFTEVURSBDQVNDQURF">

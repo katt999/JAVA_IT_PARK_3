@@ -1,7 +1,7 @@
 <div id="header" class="header-wrapper header1">
     <div class="header-inner-wrapper center">
         <div class="logo">
-            <a href="index.html" title=""><img id="logoImage" src="/images/logo.png" alt="" title="" /><img id="logoImageRetina" src="/images/logo-retina.png" alt="" title="" /></a>
+            <a href="/" title=""><img id="logoImage" src="/images/logo.png" alt="" title="" /><img id="logoImageRetina" src="/images/logo-retina.png" alt="" title="" /></a>
             <div class="logo-text">КАЗАНСКИЙ НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ <br />ТЕХНИЧЕСКИЙ УНИВЕРСИТЕТ ИМ. А. Н. ТУПОЛЕВА ‒ КАИ</div>
         </div> <a class="mobile-menu-show"><i class="fa mobile-menu-icon fa-list"></i></a>
         <div class="main-menu menu-header1">
