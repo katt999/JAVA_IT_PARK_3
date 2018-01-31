@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/entrant-servlet.iml" filepath="$PROJECT_DIR$/entrant-servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Entrant.iml" filepath="$PROJECT_DIR$/Entrant.iml" />
     </modules>
   </component>
 </project>

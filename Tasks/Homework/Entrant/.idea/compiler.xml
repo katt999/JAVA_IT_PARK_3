@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="entrant-servlet" />
+        <module name="Entrant" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="entrant-servlet" target="1.8" />
+      <module name="Entrant" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
