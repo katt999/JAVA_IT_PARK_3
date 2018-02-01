@@ -50,12 +50,46 @@
                 </#list>
                 </table>
                 <form action="/competitions" method="post" class="wpcf7">
-                    <select style="width:250px;" name="formativeOrgunit" placeholder="Формирующее подразделение" class="wpcf7-form-control">
-                        <#list model.formativeOrgunits as formativeOrgunit>
-                           <option value="${model.formativeOrgunit.id}">${model.formativeOrgunit.title}</option>
+                    <select style="width:250px;" name="formativeOrgunit"  class="wpcf7-form-control">
+                        <option disabled selected>Формирующее подразделение</option>
+                    <#list model.formativeOrgunits as formativeOrgunit>
+                           <option value="${formativeOrgunit.id}">${formativeOrgunit.shortTitle}</option>
                         </#list>
-                        <option>
                     </select>
+                    <select style="width:250px;" name="competitionType"  class="wpcf7-form-control">
+                        <option disabled selected>Тип конкурса</option>
+                    <#list model.competitionTypes as competitionType>
+                        <option value="${competitionType.id}">${competitionType.title}</option>
+                    </#list>
+                    </select>
+                    <select style="width:250px;" name="programForm" class="wpcf7-form-control">
+                        <option disabled selected>Форма обучения</option>
+                    <#list model.programForms as programForm>
+                        <option value="${programForm.id}">${programForm.title}</option>
+                    </#list>
+                    </select>
+                    <select style="width:250px;" name="programSubject" class="wpcf7-form-control">
+                        <option disabled selected>Специальность</option>
+                    <#list model.programSubjects as programSubject>
+                        <option value="${programSubject.id}">${programSubject.title}</option>
+                    </#list>
+                    </select>
+                    <select style="width:250px;" name="levelType"  class="wpcf7-form-control">
+                        <option disabled selected>Уровень образования</option>
+                    <#list model.levelTypes as levelType>
+                        <option value="${levelType.id}">${levelType.title}</option>
+                    </#list>
+                    </select>
+                    <select style="width:250px;" name="compensationType"  class="wpcf7-form-control">
+                        <option disabled selected>Тип компенсации</option>
+                    <#list model.compensationTypes as compensationType>
+                        <option value="${compensationType.id}">${compensationType.title}</option>
+                    </#list>
+                    </select>
+                    <input type="text" style="width:250px;" name="programSetOuMinisterialPlan" placeholder="Общий план приема" class="wpcf7-form-control">
+                    <input type="text" style="width:250px;" name="programSetOuTargetAdmPlan" placeholder="Целевых мест" class="wpcf7-form-control">
+                    <input type="text" style="width:250px;" name="programSetOuExclusivePlan" placeholder="Льготных мест" class="wpcf7-form-control">
+                    <input type="text" style="width:250px;" name="programSetOuContractPlan" placeholder="Мест по договору" class="wpcf7-form-control">
                     <input type="submit" style="width:250px;" class="wpcf7-form-control wpcf7-submit" value="ДОБАВИТЬ">
                 </form>
             </div>

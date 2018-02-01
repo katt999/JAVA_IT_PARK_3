@@ -637,6 +637,19 @@ span.sf-sub-indicator {
     width: 100%;
 }
 
+.wpcf7 select.wpcf7-form-control {
+	background: #fff;
+	border: none;
+	padding: 15px 25px;
+	border: 1px solid #e7e7e7;
+	color: #777;
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+	outline: none;
+	margin-left: 0;
+	width: 100%;
+}
+
 .wpcf7 textarea.wpcf7-form-control {
     background: #fff;
     border: none;
