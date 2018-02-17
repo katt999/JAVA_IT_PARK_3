@@ -20,7 +20,6 @@
             <!-- start container -->
             <div class="page-wrapper">
                 <script>
-                    <#--Функция принимает на вход два параметра - имя и фамилию -->
                     function sendParameterForm() {
                         var formativeOrgunit = $("#formativeOrgunit").val();
                         var programForm = $("#programForm").val();
