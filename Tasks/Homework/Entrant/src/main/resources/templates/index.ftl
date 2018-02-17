@@ -1,4 +1,6 @@
 <#ftl encoding='UTF-8'>
+<#import 'spring.ftl' as spring>
+<@spring.bind "model"/>
 <html>
 <head>
 <#include 'common/head.ftl'/>
@@ -30,7 +32,7 @@
                                         </div>
                                         <div class="portfolio-dimaond-wrapper">
                                             <div class="wpb_animate_when_almost_visible1 wpb_left-to-right-diamonds">
-                                                <a class="diamond-big thumb-big portf-item1 " style="background: url(/images/iante.jpg) no-repeat; background-size: cover;" href="#">
+                                                <a class="diamond-big thumb-big portf-item1 " style="background: url(/images/iante.jpg) no-repeat; background-size: cover;" href="/iante">
                                                     <div class="portfolio-grid-overlay-hover">ИАНТЭ</div>
                                                 </a>
                                             </div>

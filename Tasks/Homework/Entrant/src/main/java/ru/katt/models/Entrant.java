@@ -7,6 +7,7 @@ package ru.katt.models;
 import lombok.*;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "entrant_data", schema = "public")
@@ -14,8 +15,8 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = "competitions")
+@ToString(exclude = "competitions")
 @Builder
 public class Entrant {
 
@@ -32,17 +33,22 @@ public class Entrant {
     @Column (name = "middle_name")
     private String middleName;
 
-    @Column (name = "birth_date")
-    private Date birthDate;
-
     private String citizenship;
-
-    @Column (name = "edu_document_kind_id")
-    private int eduDocumentKindId;
 
     @Column (name = "edu_document_number")
     private String eduDocumentNumber;
 
-    @Column (name = "edu_document_average_mark")
-    private double eduDocumentAverageMark;
+    @Column (name = "email")
+    private String email;
+
+    @ManyToMany
+    @JoinTable(
+            name="entrant_competition",
+            joinColumns=@JoinColumn(name="entrant_id", referencedColumnName="id"),
+            inverseJoinColumns=@JoinColumn(name="competition_id", referencedColumnName="id"))
+    private List<Competition> competitions;
+
+    @OneToMany(mappedBy="entrant")
+    private List<ExamEntrant> examEntrants;
+
 }

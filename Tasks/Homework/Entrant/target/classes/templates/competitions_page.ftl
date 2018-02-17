@@ -12,7 +12,7 @@
     <div class="container-wrapper">
         <div class="page-title-wrapper">
             <div class="center">
-                <h1>1Справочник конкурсов</h1>
+                <h1>Справочник конкурсов</h1>
             </div>
         </div>
         <div class="clear"></div>

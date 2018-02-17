@@ -7,6 +7,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import ru.katt.models.Role;
 import ru.katt.models.State;
 import ru.katt.forms.RegistrationForm;
 import ru.katt.models.User;
@@ -36,18 +37,19 @@ public class RegistrationServiceImpl implements RegistrationService {
     String confirmString = UUID.randomUUID().toString().replace("-","");
 
     User newUser = User.builder()
-        .name(form.getName())
-        .confirmCode(confirmString)
-        .expiredDate(LocalDateTime.now().plusHours(3))
-        .email(form.getEmail())
-        .surname(form.getSurname())
-        .hashPassword(hashPassword)
-        .registrationTime(registrationTime)
-        .build();
+            .name(form.getName())
+            .confirmCode(confirmString)
+            .expiredDate(LocalDateTime.now().plusHours(3))
+            .email(form.getEmail())
+            .surname(form.getSurname())
+            .role(Role.USER)
+            .hashPassword(hashPassword)
+            .registrationTime(registrationTime)
+            .build();
 
     usersRepository.save(newUser);
 
-    String text = "<a href=\"localhost/confirm/" +newUser.getConfirmCode()+ "\">Пройдите по ссылке</a>";
+    String text = "<a href=\"http://localhost/confirm/" +newUser.getConfirmCode()+ "\">Пройдите по ссылке</a>";
 
     MimeMessage message = javaMailSender.createMimeMessage();
     message.setContent(text, "text/html");
@@ -64,7 +66,7 @@ public class RegistrationServiceImpl implements RegistrationService {
   @Override
   public boolean confirm(String confirmString) {
     Optional<User> userOptional
-        = usersRepository.findByConfirmCode(confirmString);
+            = usersRepository.findByConfirmCode(confirmString);
     if (userOptional.isPresent()) {
       User user = userOptional.get();
 

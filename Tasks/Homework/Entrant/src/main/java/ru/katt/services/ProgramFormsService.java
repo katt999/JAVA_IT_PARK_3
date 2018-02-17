@@ -11,4 +11,6 @@ public interface ProgramFormsService {
   ProgramForm getProgramForm(Long programFormId);
 
   void update(Long programFormId, ProgramFormsForm form);
+
+  void programForm(ProgramFormsForm form);
 }

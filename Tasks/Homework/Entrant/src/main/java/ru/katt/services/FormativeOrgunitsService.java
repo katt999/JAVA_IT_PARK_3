@@ -11,4 +11,6 @@ public interface FormativeOrgunitsService {
   FormativeOrgunit getFormativeOrgunit(Long formativeOrgunitId);
 
   void update(Long formativeOrgunitId, FormativeOrgunitsForm form);
+
+  void formativeOrgunit(FormativeOrgunitsForm form);
 }

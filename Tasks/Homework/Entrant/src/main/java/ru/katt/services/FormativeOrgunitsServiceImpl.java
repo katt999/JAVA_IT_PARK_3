@@ -1,5 +1,6 @@
 package ru.katt.services;
 
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.katt.forms.FormativeOrgunitsForm;
@@ -36,5 +37,17 @@ public class FormativeOrgunitsServiceImpl implements FormativeOrgunitsService {
     FormativeOrgunit formativeOrgunit = formativeOrgunitsRepository.findOne(formativeOrgunitId);
     form.update(formativeOrgunit);
     formativeOrgunitsRepository.save(formativeOrgunit);
+  }
+
+  @Override
+  @SneakyThrows
+  public void formativeOrgunit(FormativeOrgunitsForm form) {
+
+    FormativeOrgunit newFormativeOrgunit = FormativeOrgunit.builder()
+            .shortTitle(form.getShortTitle())
+            .fullTitle(form.getFullTitle())
+            .build();
+
+    formativeOrgunitsRepository.save(newFormativeOrgunit);
   }
 }

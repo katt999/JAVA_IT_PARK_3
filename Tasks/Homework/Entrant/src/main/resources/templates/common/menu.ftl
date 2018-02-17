@@ -16,17 +16,28 @@
                             <li class="menu-item"><a href="#">Второе высшее образование</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item current-menu-item  menu-item-has-children">СПИСКИ ПОСТУПАЮЩИХ
+                    <li class="menu-item current-menu-item  menu-item-has-children">ИНСТИТУТЫ
                         <ul class="sub-menu">
-                            <li class="menu-item current-menu-item menu-item-home"><a href="#">ИАНТЭ</a></li>
+                            <li class="menu-item current-menu-item menu-item-home"><a href="/iante">ИАНТЭ</a></li>
                             <li class="menu-item"><a href="#">ИКТЗИ</a></li>
                             <li class="menu-item"><a href="#">ИРЭТ</a></li>
                             <li class="menu-item"><a href="#">ИАЭП</a></li>
                             <li class="menu-item"><a href="#">ИЭУСТ</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item"><a href="#">Документы</a></li>
-                    <li class="menu-item"><a href="#">Контакты</a></li>
+                    <li class="menu-item"><a href="/contact">Контакты</a></li>
+                        <#if model.user??>
+                            <li class="menu-item">
+                                <a href="/profile">ЛИЧНЫЙ КАБИНЕТ</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/logout">ВЫХОД</a>
+                            </li>
+                        <#else>
+                            <li class="menu-item">
+                                <a href="/login">ЛИЧНЫЙ КАБИНЕТ</a>
+                            </li>
+                        </#if>
                 </ul>
             </div>
         </div>

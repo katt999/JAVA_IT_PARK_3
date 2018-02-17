@@ -211,7 +211,7 @@ body, p {
 }
 
 p {
-	color: #777;
+	color: #272727;
 	font-family: 'Playfair Display', serif;
 	font-size: 15px;
 	font-weight: 400;	
@@ -350,7 +350,7 @@ ul {
 	margin-bottom: 1.714285714rem;
 }
  table {
-	color: #757575;
+	color: #000;
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
@@ -446,7 +446,7 @@ ul {
 .header-wrapper.header1 .logo-text {
 	font-size: 13px;
 	font-style: italic;
-	color: #777;
+	color: #272727;
 	float: left;
 	margin-left: 10px;
 	margin-top: 10px;
@@ -474,7 +474,7 @@ body.admin-bar .header-wrapper.header1 .header-inner-wrapper  {
 }
 
 .menu-header1 ul {
-	color: #777777;
+	color: #272727777;
     list-style: none;
     text-align: left;
 }
@@ -489,7 +489,7 @@ body.admin-bar .header-wrapper.header1 .header-inner-wrapper  {
     margin-right: 0;
 }
 .menu-header1 ul.sf-menu > li > a {
-	color: #777;
+	color: #272727;
 	font-size: 14px;
 	text-transform: uppercase;
 	font-family: 'Open Sans', sans-serif;
@@ -532,7 +532,7 @@ span.sf-sub-indicator {
 	color: #000;
 }
 .menu-header1.main-menu .sf-menu ul li a {
-	color: #777;
+	color: #272727;
 	text-transform: uppercase;
 	font-size: 11px;
 	padding: 10px 15px;	
@@ -618,7 +618,8 @@ span.sf-sub-indicator {
 	position: relative;
 	float: left;
 	width: 100%;
-	padding-left: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .wpcf7 {
@@ -629,7 +630,7 @@ span.sf-sub-indicator {
     border: none;
     padding: 15px 25px;
     border: 1px solid #e7e7e7;
-    color: #777;
+    color: #272727;
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
     outline: none;
@@ -637,12 +638,35 @@ span.sf-sub-indicator {
     width: 100%;
 }
 
+.wpcf7 button.wpcf7-form-control {
+	background: #fff;
+	border: none;
+	padding: 15px 25px;
+	border: 1px solid #e7e7e7;
+	color: #272727;
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+	outline: none;
+	margin-left: 0;
+	width: 100%;
+}
+
+.wpcf7 input[type="checkbox"].wpcf7-form-control {
+	background: #fff;
+	border: none;
+	border: 1px solid #e7e7e7;
+	margin-left: 0;
+	-webkit-appearance: checkbox;
+	width: 2%;
+}
+
+
 .wpcf7 select.wpcf7-form-control {
 	background: #fff;
 	border: none;
 	padding: 15px 25px;
 	border: 1px solid #e7e7e7;
-	color: #777;
+	color: #272727;
 	font-size: 12px;
 	font-family: 'Open Sans', sans-serif;
 	outline: none;
@@ -655,7 +679,7 @@ span.sf-sub-indicator {
     border: none;
     padding: 15px 25px;
     border: 1px solid #e7e7e7;
-    color: #777;
+    color: #272727;
     font-size: 12px;
     position: relative;
     margin-bottom: -9px;
@@ -673,7 +697,11 @@ span.sf-sub-indicator {
 
 
 .wpcf7 input.wpcf7-form-control {
-  
+
+ }
+
+.wpcf7 button.wpcf7-form-control {
+
 }
 
 .wpcf7 textarea.wpcf7-form-control {
@@ -684,7 +712,15 @@ input.wpcf7-form-control.wpcf7-captchar {
 	width: 200px;
 	width: 200px;
 	font-size: 14px;
-	color: #777;
+	color: #272727;
+	font-weight: 600;
+}
+
+button.wpcf7-form-control.wpcf7-captchar {
+	width: 200px;
+	width: 200px;
+	font-size: 14px;
+	color: #272727;
 	font-weight: 600;
 }
 
@@ -742,6 +778,30 @@ input.wpcf7-form-control.wpcf7-captchar {
 	-moz-transition: .1s ease-in;  
 	-o-transition: .1s ease-in;  
 	transition: .1s ease-in; 
+}
+
+.wpcf7 button.wpcf7-submit {
+	border: 0;
+	margin-left: 0;
+	border: 1px solid #e7e7e7;
+	color: #000;
+	font-family: 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+	padding: 10px 25px;
+	-webkit-appearance: none;
+}
+
+.wpcf7 button.wpcf7-submit:hover {
+	background: #000;
+	border: 1px solid #000;
+	color: #fff;
+	cursor: pointer;
+	-webkit-transition: .1s ease-in;
+	-moz-transition: .1s ease-in;
+	-o-transition: .1s ease-in;
+	transition: .1s ease-in;
 }
 
 span.wpcf7-not-valid-tip {
@@ -855,7 +915,7 @@ h2.wpb_heading {
 	font-family: 'Playfair Display', serif;
 	font-size: 30px;
 	font-weight: 400;
-	color: #777;
+	color: #272727;
 	line-height: 1.4;
 	text-transform: none;
 	letter-spacing: 0;
@@ -1400,7 +1460,7 @@ div.wpb_content_element.vc_portfolio_grid { margin-top: 30px; }
 	margin-bottom: 20px;
 }
 .vc_portfolio_overview p {
-	color: #777;
+	color: #272727;
 	font-family: 'Playfair Display', serif;
 	font-size: 15px;
 	font-weight: 400;	
@@ -1424,7 +1484,7 @@ div.wpb_content_element.vc_portfolio_grid { margin-top: 30px; }
 	margin-bottom: 5px;
 }
 .single-portfolio-detail-value {
-	color: #777;
+	color: #272727;
 	font-family: 'Playfair Display', serif;
 	font-size: 14px;
 }
@@ -1510,7 +1570,7 @@ a.portfolio_overview_url {
 }
 .contact-info-content {
 	margin-left: 30px;
-	color: #777;
+	color: #272727;
 	font-family: 'Playfair Display', serif;
 	font-size: 18px;
 	font-weight: 400;	
@@ -1530,7 +1590,7 @@ a.portfolio_overview_url {
 
 
 
-input, textarea {
+input, textarea, button {
 	-webkit-appearance: none;
   	-moz-appearance: none;
 	-webkit-border-radius:0; 
@@ -1542,10 +1602,12 @@ input, textarea {
 	box-shadow:none;
 }
 
+button:focus,
 input:focus,
 input#s:focus,
 textarea:focus,
 .wpcf7 input.wpcf7-form-control:focus,
+.wpcf7 button.wpcf7-form-control:focus,
 .wpcf7 textarea.wpcf7-form-control:focus {
     border-color: #e7e7e7;
 }

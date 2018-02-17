@@ -23,7 +23,5 @@ public interface CompetitionsService {
 
     Competition getCompetition(Long CompetitionId);
 
-    String competition(CompetitionsForm form);
-
-    void update(Long competitionId, CompetitionsForm form);
+    void competition(CompetitionsForm form);
 }

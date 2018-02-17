@@ -81,15 +81,8 @@ public class CompetitionsServiceImpl implements CompetitionsService {
     }
 
     @Override
-    public void update(Long competitionId, CompetitionsForm form) {
-        Competition competition = competitionsRepository.findOne(competitionId);
-        form.update(competition);
-        competitionsRepository.save(competition);
-    }
-
-    @Override
     @SneakyThrows
-    public String competition(CompetitionsForm form) {
+    public void competition(CompetitionsForm form) {
 
         Competition newCompetition = Competition.builder()
                 .formativeOrgunit(form.getFormativeOrgunit())
@@ -105,6 +98,6 @@ public class CompetitionsServiceImpl implements CompetitionsService {
                 .build();
 
         competitionsRepository.save(newCompetition);
-        return "";
     }
+
 }

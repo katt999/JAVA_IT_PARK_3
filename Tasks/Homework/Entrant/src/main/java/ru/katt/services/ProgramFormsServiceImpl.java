@@ -1,5 +1,6 @@
 package ru.katt.services;
 
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.katt.forms.ProgramFormsForm;
@@ -32,5 +33,16 @@ public class ProgramFormsServiceImpl implements ProgramFormsService {
     ProgramForm programForm = programFormsRepository.findOne(programFormId);
     form.update(programForm);
     programFormsRepository.save(programForm);
+  }
+
+  @Override
+  @SneakyThrows
+  public void programForm(ProgramFormsForm form) {
+
+    ProgramForm newProgramForm = ProgramForm.builder()
+            .title(form.getTitle())
+            .build();
+
+    programFormsRepository.save(newProgramForm);
   }
 }

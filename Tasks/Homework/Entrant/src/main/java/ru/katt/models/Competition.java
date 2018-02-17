@@ -6,6 +6,7 @@ package ru.katt.models;
 
 import lombok.*;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "competition", schema = "public")
@@ -13,8 +14,8 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = "entrants")
+@ToString(exclude = "entrants")
 @Builder
 public class Competition {
 
@@ -57,4 +58,7 @@ public class Competition {
 
     @Column (name = "program_set_contract_plan")
     private int programSetOuContractPlan;
+
+    @ManyToMany(mappedBy = "competitions")
+    private List<Entrant> entrants;
 }

@@ -3,10 +3,14 @@ package ru.katt.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+import ru.katt.forms.RegistrationForm;
+import ru.katt.services.RegistrationService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 import ru.katt.forms.RegistrationForm;
 import ru.katt.services.RegistrationService;
 
@@ -15,7 +19,6 @@ public class RegistrationController {
 
   @Autowired
   private RegistrationService service;
-
 
   @PostMapping("/registration")
   public String registrationUser(@ModelAttribute RegistrationForm form,
@@ -26,16 +29,28 @@ public class RegistrationController {
   }
 
   @GetMapping("/registration")
-  public String getRegistrationPage() {
+  public String getRegistrationPage(@ModelAttribute("model") ModelMap model) {
     return "registration_page";
   }
 
   @GetMapping("/confirm/{confirm-string}")
   public String getConfirmPage(
-      @ModelAttribute("model") ModelMap model,
-      @PathVariable("confirm-string") String confirmString) {
+          @ModelAttribute("model") ModelMap model,
+          @PathVariable("confirm-string") String confirmString) {
     boolean result = service.confirm(confirmString);
     model.addAttribute("result", result);
     return "confirm_result_page";
+  }
+
+  @GetMapping("/login")
+  public String login(
+          @ModelAttribute("model") ModelMap model,
+          @RequestParam(value = "error", required = false) Boolean error) {
+    if (error != null) {
+      model.addAttribute("error", true);
+    } else {
+      model.addAttribute("error", false);
+    }
+    return "login";
   }
 }

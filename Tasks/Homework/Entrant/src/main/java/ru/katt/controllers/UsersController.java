@@ -2,20 +2,34 @@ package ru.katt.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import ru.katt.forms.NamesForm;
 import ru.katt.models.User;
+import ru.katt.services.AuthenticationService;
 import ru.katt.services.UsersService;
 
 import java.util.List;
 
 @Controller
-public class  UsersController {
+public class UsersController {
 
   @Autowired
   private UsersService service;
+
+  @Autowired
+  private AuthenticationService authenticationService;
+
+  @GetMapping(value = "/profile")
+  public String getProfilePage(
+          @ModelAttribute("model") ModelMap model,
+          Authentication authentication) {
+    User user = authenticationService.getUserByAuthentication(authentication);
+    model.addAttribute("user", user);
+    return "profile";
+  }
 
   @GetMapping(value = "/users")
   public String getUsers(@ModelAttribute("model")ModelMap model,

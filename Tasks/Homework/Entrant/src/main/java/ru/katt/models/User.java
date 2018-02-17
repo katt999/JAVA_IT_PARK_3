@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "news_user")
+@Table(name = "users")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -32,4 +32,7 @@ public class User {
 
   @Enumerated(value = EnumType.STRING)
   private State state;
+
+  @Enumerated(value = EnumType.STRING)
+  private Role role;
 }
